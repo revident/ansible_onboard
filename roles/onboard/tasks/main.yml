@@ -1,0 +1,52 @@
+---
+
+- name: Include Package Names localized to OS Family
+  include_vars: packages-{{ ansible_os_family }}.yml
+
+- name: Set Hostname from Inventory
+  command: hostnamectl set-hostname {{ inventory_hostname|quote }}
+  when: ansible_fqdn != inventory_hostname
+
+- name: Install Packages Required for SSH Agent Auth
+  package: name={{ item }} state=present
+  with_items: 
+    - sudo 
+    - "{{ pkg_pamSSHAgentAuth }}"
+
+- name: Create Group for the Service Account
+  group:
+    name: "{{ onboard_svcGroup }}"
+    state: present
+    gid: "{{ onboard_svcGID }}"
+
+- name: Create Account for the Service Account
+  user:
+    name: "{{ onboard_svcUser }}"
+    comment: "{{ onboard_svcUserPrettyName }}"
+    uid: "{{ onboard_svcUID }}"
+    groups: "{{ onboard_svcGroup }}"
+    password: '!!'
+    shell: /bin/bash
+
+- name: Install SSH Public Key for Service Account
+  authorized_key:
+    user: "{{ onboard_svcUser }}"
+    key: "{{ onboard_svcSSHPublicKey }}"
+    manage_dir: yes
+    state: present
+
+- name: Install Sudoers file for Service Group Members
+  template:
+    src: sudoers_d-svcGroup.j2
+    dest: "/etc/sudoers.d/{{ onboard_svcGroup }}"
+    owner: root
+    group: root
+    mode: "0440"
+
+- name: Modify PAM sudo to use SSH Agent Auth
+  lineinfile: 
+    dest: /etc/pam.d/sudo 
+    state: present 
+    regexp: 'pam_ssh_agent_auth.so'
+    line: 'auth    sufficient     pam_ssh_agent_auth.so file=%h/.ssh/authorized_keys' 
+    insertafter: '^#%PAM-1.0'

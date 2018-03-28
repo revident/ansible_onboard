@@ -1,0 +1,7 @@
+---
+- name: Onboard New Host
+  hosts: all
+  become: yes
+  become_user: root
+  roles:
+    - onboard

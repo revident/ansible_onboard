@@ -1,0 +1,630 @@
+{
+  "version": 1,
+  "width": 80,
+  "height": 24,
+  "duration": 61.05511,
+  "command": null,
+  "title": null,
+  "env": {
+    "TERM": "xterm-256color",
+    "SHELL": "/bin/bash"
+  },
+  "stdout": [
+    [
+      0.184973,
+      "\u001b]0;scott@hardpoint:~/Private/repos/github.com/revident_ansible_onboard\u0007"
+    ],
+    [
+      0.000193,
+      "[DEMO]$ "
+    ],
+    [
+      1.0,
+      "# root is only needed on the very first run"
+    ],
+    [
+      0.757702,
+      "\r\n\u001b]0;scott@hardpoint:~/Private/repos/github.com/revident_ansible_onboard\u0007"
+    ],
+    [
+      0.000298,
+      "[DEMO]$ "
+    ],
+    [
+      1.0,
+      "ansible-playbook onboard.yml -u root -k"
+    ],
+    [
+      0.724417,
+      "\r\n"
+    ],
+    [
+      1.0,
+      "SSH password: "
+    ],
+    [
+      1.0,
+      "\r\n"
+    ],
+    [
+      0.907441,
+      "\r\nPLAY [Onboard New Host] ********************************************************\r\n"
+    ],
+    [
+      0.08793,
+      "\r\nTASK [Gathering Facts] *********************************************************\r\n"
+    ],
+    [
+      1.0,
+      "\u001b[0;32mok: [host1.example.com]\u001b[0m\r\n"
+    ],
+    [
+      0.021772,
+      "\r\nTASK [onboard : Include Package Names localized to OS Family] ******************\r\n"
+    ],
+    [
+      0.114148,
+      "\u001b[0;32mok: [host1.example.com]\u001b[0m\r\n"
+    ],
+    [
+      0.023576,
+      "\r\nTASK [onboard : Set Hostname from Inventory] ***********************************\r\n"
+    ],
+    [
+      1.0,
+      "\u001b[0;33mchanged: [host1.example.com]\u001b[0m\r\n"
+    ],
+    [
+      0.024285,
+      "\r\nTASK [onboard : Install Packages Required for SSH Agent Auth] ******************\r\n"
+    ],
+    [
+      1.0,
+      "\u001b[0;32mok: [host1.example.com] => (item=sudo)\u001b[0m\r\n"
+    ],
+    [
+      1.0,
+      "\u001b[0;33mchanged: [host1.example.com] => (item=pam_ssh_agent_auth)\u001b[0m\r\n"
+    ],
+    [
+      0.025144,
+      "\r\nTASK [onboard : Create Group for the Service Account] **************************\r\n"
+    ],
+    [
+      1.0,
+      "\u001b[0;33mchanged: [host1.example.com]\u001b[0m\r\n"
+    ],
+    [
+      0.020831,
+      "\r\nTASK [onboard : Create Account for the Service Account] ************************\r\n"
+    ],
+    [
+      1.0,
+      "\u001b[0;33mchanged: [host1.example.com]\u001b[0m\r\n"
+    ],
+    [
+      0.01956,
+      "\r\nTASK [onboard : Install SSH Public Key for Service Account] ********************\r\n"
+    ],
+    [
+      1.0,
+      "\u001b[0;33mchanged: [host1.example.com]\u001b[0m\r\n"
+    ],
+    [
+      0.021311,
+      "\r\nTASK [onboard : Install Sudoers file for Service Group Members] ****************\r\n"
+    ],
+    [
+      1.0,
+      "\u001b[0;33mchanged: [host1.example.com]\u001b[0m\r\n"
+    ],
+    [
+      0.023245,
+      "\r\nTASK [onboard : Modify PAM sudo to use SSH Agent Auth] *************************\r\n"
+    ],
+    [
+      1.0,
+      "\u001b[0;33mchanged: [host1.example.com]\u001b[0m\r\n"
+    ],
+    [
+      0.006865,
+      "\r\nPLAY RECAP *********************************************************************\r\n"
+    ],
+    [
+      0.000176,
+      "\u001b[0;33mhost1.example.com\u001b[0m          : \u001b[0;32mok=9   \u001b[0m \u001b[0;33mchanged=7   \u001b[0m unreachable=0    failed=0   \r\n\r\n"
+    ],
+    [
+      0.122373,
+      "\u001b]0;scott@hardpoint:~/Private/repos/github.com/revident_ansible_onboard\u0007[DEMO]$ "
+    ],
+    [
+      1.0,
+      "# Make sure your forwarding your SSH agent"
+    ],
+    [
+      1.0,
+      "\r\n"
+    ],
+    [
+      0.000893,
+      "\u001b]0;scott@hardpoint:~/Private/repos/github.com/revident_ansible_onboard\u0007"
+    ],
+    [
+      0.000401,
+      "[DEMO]$ "
+    ],
+    [
+      1.0,
+      "head -1 ~/.ssh/config"
+    ],
+    [
+      0.803025,
+      "\r\n"
+    ],
+    [
+      0.006971,
+      "ForwardAgent yes\r\n"
+    ],
+    [
+      0.001642,
+      "\u001b]0;scott@hardpoint:~/Private/repos/github.com/revident_ansible_onboard\u0007"
+    ],
+    [
+      8.5e-05,
+      "[DEMO]$ "
+    ],
+    [
+      1.0,
+      "# and have added your key to your ssh agent"
+    ],
+    [
+      0.596717,
+      "\r\n\u001b]0;scott@hardpoint:~/Private/repos/github.com/revident_ansible_onboard\u0007[DEMO]$ "
+    ],
+    [
+      1.0,
+      "ssh-add -l"
+    ],
+    [
+      0.608383,
+      "\r\n"
+    ],
+    [
+      0.01448,
+      "2048 SHA256:iVYAfZHYb3KBWPZKOVVHjcTZ3dkzcQSY3DuUflypvH8 /home/scott/.ssh/id_rsa (RSA)\r\n"
+    ],
+    [
+      0.001297,
+      "\u001b]0;scott@hardpoint:~/Private/repos/github.com/revident_ansible_onboard\u0007"
+    ],
+    [
+      0.000344,
+      "[DEMO]$ "
+    ],
+    [
+      1.0,
+      "# we are prompted for a sudo password, but it is unused, I type a <space>\r>"
+    ],
+    [
+      1.0,
+      "\r\n"
+    ],
+    [
+      0.00109,
+      "\u001b]0;scott@hardpoint:~/Private/repos/github.com/revident_ansible_onboard\u0007"
+    ],
+    [
+      0.000312,
+      "[DEMO]$ "
+    ],
+    [
+      1.0,
+      "ansible-playbook onboard.yml -u svcuser -K"
+    ],
+    [
+      1.0,
+      "\r\n"
+    ],
+    [
+      1.0,
+      "SUDO password: "
+    ],
+    [
+      1.0,
+      "\r\n"
+    ],
+    [
+      0.920762,
+      "\r\nPLAY [Onboard New Host] ********************************************************\r\n"
+    ],
+    [
+      0.086001,
+      "\r\nTASK [Gathering Facts] *********************************************************\r\n"
+    ],
+    [
+      1.0,
+      "\u001b[0;32mok: [host1.example.com]\u001b[0m\r\n"
+    ],
+    [
+      0.022283,
+      "\r\nTASK [onboard : Include Package Names localized to OS Family] ******************\r\n"
+    ],
+    [
+      0.111652,
+      "\u001b[0;32mok: [host1.example.com]\u001b[0m\r\n"
+    ],
+    [
+      0.023452,
+      "\r\nTASK [onboard : Set Hostname from Inventory] ***********************************\r\n"
+    ],
+    [
+      0.049309,
+      "\u001b[0;36mskipping: [host1.example.com]\u001b[0m\r\n"
+    ],
+    [
+      0.020514,
+      "\r\nTASK [onboard : Install Packages Required for SSH Agent Auth] ******************\r\n"
+    ],
+    [
+      1.0,
+      "\u001b[0;32mok: [host1.example.com] => (item=sudo)\u001b[0m\r\n"
+    ],
+    [
+      0.876062,
+      "\u001b[0;32mok: [host1.example.com] => (item=pam_ssh_agent_auth)\u001b[0m\r\n"
+    ],
+    [
+      0.023036,
+      "\r\nTASK [onboard : Create Group for the Service Account] **************************\r\n"
+    ],
+    [
+      1.0,
+      "\u001b[0;32mok: [host1.example.com]\u001b[0m\r\n"
+    ],
+    [
+      0.023447,
+      "\r\nTASK [onboard : Create Account for the Service Account] ************************\r\n"
+    ],
+    [
+      1.0,
+      "\u001b[0;32mok: [host1.example.com]\u001b[0m"
+    ],
+    [
+      0.000143,
+      "\r\n"
+    ],
+    [
+      0.021507,
+      "\r\nTASK [onboard : Install SSH Public Key for Service Account] ********************\r\n"
+    ],
+    [
+      1.0,
+      "\u001b[0;32mok: [host1.example.com]\u001b[0m\r\n"
+    ],
+    [
+      0.0238,
+      "\r\nTASK [onboard : Install Sudoers file for Service Group Members] ****************\r\n"
+    ],
+    [
+      1.0,
+      "\u001b[0;32mok: [host1.example.com]\u001b[0m\r\n"
+    ],
+    [
+      0.023864,
+      "\r\nTASK [onboard : Modify PAM sudo to use SSH Agent Auth] *************************\r\n"
+    ],
+    [
+      1.0,
+      "\u001b[0;32mok: [host1.example.com]\u001b[0m\r\n"
+    ],
+    [
+      0.006213,
+      "\r\nPLAY RECAP *********************************************************************\r\n\u001b[0;32mhost1.example.com\u001b[0m          : \u001b[0;32mok=8   \u001b[0m changed=0    unreachable=0    failed=0   \r\n"
+    ],
+    [
+      8.9e-05,
+      "\r\n"
+    ],
+    [
+      0.121069,
+      "\u001b]0;scott@hardpoint:~/Private/repos/github.com/revident_ansible_onboard\u0007[DEMO]$ "
+    ],
+    [
+      1.0,
+      "s"
+    ],
+    [
+      0.161157,
+      "s"
+    ],
+    [
+      0.136957,
+      "h"
+    ],
+    [
+      0.119346,
+      " "
+    ],
+    [
+      0.817103,
+      "s"
+    ],
+    [
+      1.0,
+      "v"
+    ],
+    [
+      0.335716,
+      "c"
+    ],
+    [
+      0.704802,
+      "u"
+    ],
+    [
+      0.095554,
+      "s"
+    ],
+    [
+      0.295776,
+      "e"
+    ],
+    [
+      0.112106,
+      "r"
+    ],
+    [
+      0.344066,
+      "@"
+    ],
+    [
+      1.0,
+      "h"
+    ],
+    [
+      0.102532,
+      "o"
+    ],
+    [
+      0.06219,
+      "s"
+    ],
+    [
+      0.106389,
+      "t"
+    ],
+    [
+      0.256019,
+      "1"
+    ],
+    [
+      0.255486,
+      "."
+    ],
+    [
+      0.217197,
+      "e"
+    ],
+    [
+      0.224243,
+      "x"
+    ],
+    [
+      0.254669,
+      "a"
+    ],
+    [
+      0.137471,
+      "m"
+    ],
+    [
+      0.198679,
+      "p"
+    ],
+    [
+      0.15245,
+      "l"
+    ],
+    [
+      0.087613,
+      "e"
+    ],
+    [
+      0.496075,
+      "."
+    ],
+    [
+      0.159576,
+      "c"
+    ],
+    [
+      0.080192,
+      "o"
+    ],
+    [
+      0.080254,
+      "m"
+    ],
+    [
+      1.0,
+      "\r\n"
+    ],
+    [
+      0.532774,
+      "Last login: Wed Mar 28 17:04:37 2018 from 192.168.90.42\r\r\n"
+    ],
+    [
+      0.159012,
+      "\u001b]0;svcuser@host1:~\u0007\u001b[?1034h[svcuser@host1 ~]$ "
+    ],
+    [
+      0.932048,
+      "s"
+    ],
+    [
+      0.064005,
+      "u"
+    ],
+    [
+      0.112509,
+      "d"
+    ],
+    [
+      0.095723,
+      "o"
+    ],
+    [
+      0.240767,
+      " "
+    ],
+    [
+      0.215819,
+      "-"
+    ],
+    [
+      0.279573,
+      "i"
+    ],
+    [
+      0.498709,
+      "\r\n"
+    ],
+    [
+      0.118021,
+      "\u001b]0;root@host1:~\u0007\u001b[?1034h[root@host1 ~]# "
+    ],
+    [
+      1.0,
+      "w"
+    ],
+    [
+      0.072678,
+      "h"
+    ],
+    [
+      0.056249,
+      "o"
+    ],
+    [
+      1.0,
+      "a"
+    ],
+    [
+      0.095608,
+      "m"
+    ],
+    [
+      0.176427,
+      "i"
+    ],
+    [
+      0.415998,
+      "\r\n"
+    ],
+    [
+      0.003579,
+      "root\r\n\u001b]0;root@host1:~\u0007[root@host1 ~]# "
+    ],
+    [
+      1.0,
+      "#"
+    ],
+    [
+      0.496351,
+      "b"
+    ],
+    [
+      0.376062,
+      "y"
+    ],
+    [
+      0.230478,
+      "e"
+    ],
+    [
+      0.457539,
+      "!"
+    ],
+    [
+      0.744907,
+      "\r\n\u001b]0;root@host1:~\u0007[root@host1 ~]# "
+    ],
+    [
+      0.747412,
+      "e"
+    ],
+    [
+      0.153414,
+      "x"
+    ],
+    [
+      0.105284,
+      "i"
+    ],
+    [
+      0.159881,
+      "t"
+    ],
+    [
+      0.047994,
+      "\r\nlogout\r\n"
+    ],
+    [
+      0.003924,
+      "\u001b]0;svcuser@host1:~\u0007[svcuser@host1 ~]$ "
+    ],
+    [
+      0.308621,
+      "e"
+    ],
+    [
+      0.191457,
+      "x"
+    ],
+    [
+      0.103009,
+      "i"
+    ],
+    [
+      0.120562,
+      "t"
+    ],
+    [
+      0.072243,
+      "\r\nlogout\r\n"
+    ],
+    [
+      0.000118,
+      "Connection to host1.example.com closed.\r\r\n"
+    ],
+    [
+      0.002524,
+      "\u001b]0;scott@hardpoint:~/Private/repos/github.com/revident_ansible_onboard\u0007"
+    ],
+    [
+      0.000392,
+      "[DEMO]$ "
+    ],
+    [
+      0.283432,
+      "e"
+    ],
+    [
+      0.462974,
+      "x"
+    ],
+    [
+      0.137718,
+      "i"
+    ],
+    [
+      0.168812,
+      "t"
+    ],
+    [
+      0.135384,
+      "\r\nexit\r\n"
+    ]
+  ]
+}

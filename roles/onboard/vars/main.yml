@@ -1,0 +1,8 @@
+---
+
+onboard_svcUID: 1001
+onboard_svcGID: 1001
+onboard_svcUser: svcuser
+onboard_svcGroup: svcuser
+onboard_svcUserPrettyName: "Ansible Service Account"
+onboard_svcSSHPublicKey: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
