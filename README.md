@@ -1,4 +1,3 @@
-https://asciinema.org/a/174003
 [![asciicast](https://asciinema.org/a/174003.png)](https://asciinema.org/a/174003)
 
 # Goals of this playbook
