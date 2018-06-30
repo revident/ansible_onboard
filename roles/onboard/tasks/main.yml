@@ -12,6 +12,7 @@
   with_items: 
     - sudo 
     - "{{ pkg_pamSSHAgentAuth }}"
+    - "{{ pkg_libselinuxPython }}"
 
 - name: Create Group for the Service Account
   group:

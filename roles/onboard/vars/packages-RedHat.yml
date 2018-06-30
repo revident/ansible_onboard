@@ -1,3 +1,4 @@
 ---
 
 pkg_pamSSHAgentAuth: pam_ssh_agent_auth
+pkg_libselinuxPython: libselinux-python
